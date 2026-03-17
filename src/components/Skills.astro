@@ -2,40 +2,23 @@
 import { resume } from "../data/resume";
 
 const { skills } = resume;
-
-const iconColors: Record<string, string> = {
-  "编程语言": "from-blue-500 to-cyan-500",
-  "框架与工具": "from-green-500 to-emerald-500",
-  "数据存储": "from-orange-500 to-amber-500",
-  "AI / ML": "from-purple-500 to-violet-500",
-  "DevOps": "from-cyan-500 to-teal-500",
-};
-
-function getGradient(category: string): string {
-  return iconColors[category] ?? "from-gray-500 to-gray-400";
-}
 ---
 
-<section class="px-6 py-16 sm:px-12">
-  <div class="mx-auto max-w-3xl">
+<section class="px-6 py-10 sm:px-0">
+  <div class="mx-auto max-w-[640px]">
     <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">
       技能
     </h2>
 
-    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+    <div class="mt-6 space-y-4">
       {skills.map((group) => (
-        <div>
-          <h3 class="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
-            <span class={`inline-block h-2 w-2 rounded-full bg-gradient-to-r ${getGradient(group.category)}`}></span>
+        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span class="w-20 shrink-0 text-[13px] font-medium text-gray-900 dark:text-gray-200">
             {group.category}
-          </h3>
-          <div class="mt-3 flex flex-wrap gap-1.5">
-            {group.items.map((item) => (
-              <span class="rounded-md border border-gray-200 bg-white px-2.5 py-1 text-xs text-gray-600 dark:border-gray-700/50 dark:bg-gray-800/50 dark:text-gray-400">
-                {item}
-              </span>
-            ))}
-          </div>
+          </span>
+          <span class="text-[13px] text-gray-500 dark:text-gray-400">
+            {group.items.join(" · ")}
+          </span>
         </div>
       ))}
     </div>

@@ -12,44 +12,21 @@ import { resume } from "../data/resume";
 
 <Layout title={`${resume.name} - ${resume.title}`} description={`${resume.name}的个人简历 - ${resume.title}`}>
   <ThemeToggle />
-  <main class="min-h-screen">
+  <main class="mx-auto min-h-screen max-w-2xl px-6 sm:px-8">
     <Header />
-
-    <div class="mx-auto max-w-3xl px-6 sm:px-12">
-      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
-    </div>
-
+    <hr class="border-gray-100 dark:border-gray-800/50" />
     <About />
-
-    <div class="mx-auto max-w-3xl px-6 sm:px-12">
-      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
-    </div>
-
+    <hr class="border-gray-100 dark:border-gray-800/50" />
     <Experience />
-
-    <div class="mx-auto max-w-3xl px-6 sm:px-12">
-      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
-    </div>
-
+    <hr class="border-gray-100 dark:border-gray-800/50" />
     <Projects />
-
-    <div class="mx-auto max-w-3xl px-6 sm:px-12">
-      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
-    </div>
-
+    <hr class="border-gray-100 dark:border-gray-800/50" />
     <Skills />
-
-    <div class="mx-auto max-w-3xl px-6 sm:px-12">
-      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
-    </div>
-
+    <hr class="border-gray-100 dark:border-gray-800/50" />
     <Education />
 
-    <footer class="px-6 py-16 text-center text-sm text-gray-400 dark:text-gray-600">
-      <p class="tracking-wide">
-        Built with
-        <a href="https://astro.build" target="_blank" rel="noopener" class="text-gray-500 transition-colors hover:text-primary-500 dark:text-gray-500">Astro</a>
-      </p>
+    <footer class="py-12 text-center text-xs text-gray-300 dark:text-gray-700">
+      Built with Astro
     </footer>
   </main>
 </Layout>
