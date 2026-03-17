@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import Header from "../components/Header.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+import Education from "../components/Education.astro";
+import { resume } from "../data/resume";
+---
+
+<Layout title={`${resume.name} - ${resume.title}`} description={`${resume.name}的个人简历 - ${resume.title}`}>
+  <ThemeToggle />
+  <main class="min-h-screen">
+    <Header />
+    <div class="divide-y divide-gray-200 dark:divide-gray-800">
+      <About />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Education />
+    </div>
+    <footer class="border-t border-gray-200 px-6 py-8 text-center text-sm text-gray-400 dark:border-gray-800 dark:text-gray-500">
+      <p>
+        基于
+        <a href="https://astro.build" target="_blank" rel="noopener" class="underline transition-colors hover:text-primary-500">Astro</a>
+        构建 · 源码托管于
+        <a href={`https://github.com/${resume.contact.github}`} target="_blank" rel="noopener" class="underline transition-colors hover:text-primary-500">GitHub</a>
+      </p>
+    </footer>
+  </main>
+</Layout>
