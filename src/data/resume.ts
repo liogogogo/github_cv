@@ -18,6 +18,8 @@ export interface Experience {
 export interface Project {
   name: string;
   role?: string;
+  startDate: string;
+  endDate: string;
   techStack: string[];
   description: string[];
   link?: string;
@@ -88,6 +90,8 @@ export const resume: Resume = {
     {
       name: "体育赛事 AI 智能分析平台（网球）",
       role: "技术架构负责人 · iOS + Go 全栈",
+      startDate: "2025.03",
+      endDate: "2026.01",
       techStack: [
         "Swift",
         "CoreML",
@@ -111,6 +115,8 @@ export const resume: Resume = {
     {
       name: "智能简历生成与优化系统",
       role: "独立开发",
+      startDate: "2026.02",
+      endDate: "至今",
       techStack: [
         "Python",
         "LangChain",

@@ -10,47 +10,54 @@ const { projects } = resume;
       项目经历
     </h2>
 
-    <div class="mt-8 space-y-6">
+    <div class="mt-8 space-y-12">
       {projects.map((project) => (
-        <div class="group rounded-2xl border border-gray-100 bg-white/60 p-6 backdrop-blur transition-all hover:border-gray-200 hover:shadow-lg hover:shadow-gray-100/50 dark:border-gray-800/50 dark:bg-gray-900/40 dark:hover:border-gray-700 dark:hover:shadow-none">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="font-semibold text-gray-900 dark:text-white">
-                {project.name}
-              </h3>
-              {project.role && (
-                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{project.role}</p>
-              )}
-            </div>
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener"
-                class="shrink-0 rounded-lg p-1.5 text-gray-400 transition-all hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-                aria-label={`查看${project.name}`}
-              >
-                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-            )}
+        <div class="group relative grid gap-4 sm:grid-cols-[180px_1fr]">
+          <div class="flex flex-col text-sm text-gray-400 dark:text-gray-500 sm:text-right">
+            <span>{project.startDate} –</span>
+            <span>{project.endDate}</span>
           </div>
 
-          <ul class="mt-4 space-y-1.5">
-            {project.description.map((item) => (
-              <li class="relative pl-5 text-sm leading-relaxed text-gray-600 before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-gray-300 dark:text-gray-400 dark:before:bg-gray-600">
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div class="rounded-2xl border border-gray-100 bg-white/60 p-5 backdrop-blur transition-all hover:border-gray-200 hover:shadow-lg hover:shadow-gray-100/50 dark:border-gray-800/50 dark:bg-gray-900/40 dark:hover:border-gray-700 dark:hover:shadow-none">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-semibold text-gray-900 dark:text-white">
+                  {project.name}
+                </h3>
+                {project.role && (
+                  <p class="mt-0.5 text-sm text-primary-600 dark:text-primary-400">{project.role}</p>
+                )}
+              </div>
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener"
+                  class="shrink-0 rounded-lg p-1.5 text-gray-400 transition-all hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                  aria-label={`查看${project.name}`}
+                >
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                  </svg>
+                </a>
+              )}
+            </div>
 
-          <div class="mt-5 flex flex-wrap gap-2">
-            {project.techStack.map((tech) => (
-              <span class="rounded-md border border-gray-200 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
-                {tech}
-              </span>
-            ))}
+            <ul class="mt-4 space-y-1.5">
+              {project.description.map((item) => (
+                <li class="relative pl-5 text-sm leading-relaxed text-gray-600 before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-gray-300 dark:text-gray-400 dark:before:bg-gray-600">
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              {project.techStack.map((tech) => (
+                <span class="rounded-md border border-gray-200 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       ))}
