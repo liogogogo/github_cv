@@ -54,7 +54,6 @@ export const resume: Resume = {
   title: "Go / Python / Swift 全栈工程师",
   contact: {
     email: "705110706@qq.com",
-    phone: "182-2409-5395",
     github: "liogogogo",
     location: "四川成都",
   },
