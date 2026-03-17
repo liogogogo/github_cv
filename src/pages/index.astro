@@ -14,19 +14,41 @@ import { resume } from "../data/resume";
   <ThemeToggle />
   <main class="min-h-screen">
     <Header />
-    <div class="divide-y divide-gray-200 dark:divide-gray-800">
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Education />
+
+    <div class="mx-auto max-w-3xl px-6 sm:px-12">
+      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
     </div>
-    <footer class="border-t border-gray-200 px-6 py-8 text-center text-sm text-gray-400 dark:border-gray-800 dark:text-gray-500">
-      <p>
-        基于
-        <a href="https://astro.build" target="_blank" rel="noopener" class="underline transition-colors hover:text-primary-500">Astro</a>
-        构建 · 源码托管于
-        <a href={`https://github.com/${resume.contact.github}`} target="_blank" rel="noopener" class="underline transition-colors hover:text-primary-500">GitHub</a>
+
+    <About />
+
+    <div class="mx-auto max-w-3xl px-6 sm:px-12">
+      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
+    </div>
+
+    <Experience />
+
+    <div class="mx-auto max-w-3xl px-6 sm:px-12">
+      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
+    </div>
+
+    <Projects />
+
+    <div class="mx-auto max-w-3xl px-6 sm:px-12">
+      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
+    </div>
+
+    <Skills />
+
+    <div class="mx-auto max-w-3xl px-6 sm:px-12">
+      <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-800"></div>
+    </div>
+
+    <Education />
+
+    <footer class="px-6 py-16 text-center text-sm text-gray-400 dark:text-gray-600">
+      <p class="tracking-wide">
+        Built with
+        <a href="https://astro.build" target="_blank" rel="noopener" class="text-gray-500 transition-colors hover:text-primary-500 dark:text-gray-500">Astro</a>
       </p>
     </footer>
   </main>

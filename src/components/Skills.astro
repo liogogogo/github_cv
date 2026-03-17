@@ -3,39 +3,35 @@ import { resume } from "../data/resume";
 
 const { skills } = resume;
 
-const colorMap: Record<string, string> = {
-  "编程语言": "bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
-  "框架与工具": "bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300",
-  "数据存储": "bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
-  "AI / ML": "bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
-  "DevOps": "bg-cyan-50 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300",
+const iconColors: Record<string, string> = {
+  "编程语言": "from-blue-500 to-cyan-500",
+  "框架与工具": "from-green-500 to-emerald-500",
+  "数据存储": "from-orange-500 to-amber-500",
+  "AI / ML": "from-purple-500 to-violet-500",
+  "DevOps": "from-cyan-500 to-teal-500",
 };
 
-function getColor(category: string): string {
-  return colorMap[category] ?? "bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300";
+function getGradient(category: string): string {
+  return iconColors[category] ?? "from-gray-500 to-gray-400";
 }
 ---
 
-<section class="px-6 py-12 sm:px-12">
+<section class="px-6 py-16 sm:px-12">
   <div class="mx-auto max-w-3xl">
-    <h2 class="flex items-center gap-3 text-xl font-bold text-gray-900 dark:text-gray-100">
-      <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-100 text-primary-600 dark:bg-primary-900/50 dark:text-primary-400">
-        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-        </svg>
-      </span>
+    <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">
       技能
     </h2>
 
-    <div class="mt-6 space-y-4">
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
       {skills.map((group) => (
         <div>
-          <h3 class="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+          <h3 class="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-gray-100">
+            <span class={`inline-block h-2 w-2 rounded-full bg-gradient-to-r ${getGradient(group.category)}`}></span>
             {group.category}
           </h3>
-          <div class="flex flex-wrap gap-2">
+          <div class="mt-3 flex flex-wrap gap-1.5">
             {group.items.map((item) => (
-              <span class={`rounded-lg px-3 py-1.5 text-sm font-medium ${getColor(group.category)}`}>
+              <span class="rounded-md border border-gray-200 bg-white px-2.5 py-1 text-xs text-gray-600 dark:border-gray-700/50 dark:bg-gray-800/50 dark:text-gray-400">
                 {item}
               </span>
             ))}
