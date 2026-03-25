@@ -116,7 +116,7 @@ export const resume: Resume = {
     {
       name: "智能简历生成与优化系统",
       role: "独立开发",
-      startDate: "2026.02",
+      startDate: "2026.01",
       endDate: "至今",
       link: "https://github.com/liogogogo/ai-resume-showcase",
       techStack: [
