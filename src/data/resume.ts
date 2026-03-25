@@ -92,6 +92,7 @@ export const resume: Resume = {
       role: "技术架构负责人 · iOS + Go 全栈",
       startDate: "2024.12",
       endDate: "2026.01",
+      link: "https://github.com/liogogogo/tennis-ai-showcase",
       techStack: [
         "Swift",
         "CoreML",
@@ -117,6 +118,7 @@ export const resume: Resume = {
       role: "独立开发",
       startDate: "2026.02",
       endDate: "至今",
+      link: "https://github.com/liogogogo/ai-resume-showcase",
       techStack: [
         "Python",
         "LangChain",
