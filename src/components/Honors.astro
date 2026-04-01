@@ -1,0 +1,25 @@
+---
+import { resume } from "../data/resume";
+
+const honors = resume.honors ?? [];
+---
+
+{
+  honors.length > 0 && (
+    <section class="px-6 py-10 sm:px-0">
+      <div class="mx-auto max-w-[640px]">
+        <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">
+          获奖与荣誉
+        </h2>
+
+        <ul class="mt-6 space-y-2">
+          {honors.map((item) => (
+            <li class="relative pl-4 text-[13px] leading-relaxed text-gray-600 before:absolute before:left-0 before:top-[0.55em] before:h-1 before:w-1 before:rounded-full before:bg-gray-300 dark:text-gray-400 dark:before:bg-gray-600">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}

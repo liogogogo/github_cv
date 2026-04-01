@@ -49,20 +49,22 @@ export interface Resume {
   projects: Project[];
   skills: SkillGroup[];
   education: Education[];
+  /** 获奖与荣誉（与教育背景分列展示） */
+  honors?: string[];
 }
 
 export const resume: Resume = {
   name: "廖承城",
-  title: "Go / Python / Swift 全栈工程师",
+  title: "AI 工程师",
   contact: {
     email: "705110706@qq.com",
-    phone: "182****5395",
+    phone: "18224095395",
     github: "liogogogo",
     website: "https://liogogogo.github.io/github_cv/",
     location: "四川成都",
   },
   about:
-    "6 年软件研发经验，兼具 Go / Python / Swift 全栈工程能力与 AI 工程实践。在中兴通讯主导 5G 平台微服务重构（Java -> Go），实现内存占用降低 50%、单元测试覆盖率 90%。独立交付体育赛事 AI 分析平台（端侧 CoreML 推理 + Go 微服务 74 API）及 LangGraph 驱动的智能简历生成系统。熟练掌握大模型部署调试、Token 用量优化与定制化业务场景落地。四川大学计算机技术硕士。",
+    "6 年软件研发经验，兼具 Python / Go 全栈平台工程与 AI 工程实践。主导 5G 系统平台微服务重构与多租户鉴权体系建设，独立架构体育赛事 AI 视频分析平台和智能简历优化生成系统，具备模型训练与工程化落地的完整能力。",
   experience: [
     {
       company: "中兴通讯股份有限公司",
@@ -70,10 +72,12 @@ export const resume: Resume = {
       startDate: "2021.06",
       endDate: "2024.02",
       description: [
-        "主导 5G 系统应用管理平台微服务改造，完成 Java → Go 技术栈整体迁移并稳定上线",
-        "优化安全管理平台内存占用从 90% 降至 40%，显著提升服务稳定性与资源利用率",
-        "搭建应用管理平台单元测试体系，达成 90% 行覆盖率，有效保障核心业务可靠性",
-        "主导用户安全管理与多租户资源鉴权模块开发，对接客户诉求完成技术方案设计与多轮迭代交付",
+        "主导应用管理系统平台从 Java 向 Go 的微服务重构并稳定上线，优化服务性能与可维护性",
+        "设计并开发多租户资源鉴权与用户权限管理模块（RBAC），提升平台安全性与资源隔离能力",
+        "优化安全管理平台微服务内存占用，从 90% 降至 40%，提升服务稳定性",
+        "搭建单元与集成测试体系，引入 AI 大模型提升测试编写效率，实现 90% 代码行覆盖率与 100% 业务接口覆盖",
+        "负责平台配置管理，基于 JSON / YAML 定义服务配置与部署策略，提升配置可读性与维护效率",
+        "参与平台分布式任务调度模块设计与开发，优化任务分发与执行效率",
       ],
     },
     {
@@ -82,16 +86,18 @@ export const resume: Resume = {
       startDate: "2020.01",
       endDate: "2020.12",
       description: [
-        "参与三维军事仿真系统研发，驻场交付技术支持并推动项目里程碑按期达成",
-        "输出现场技术问题解决方案文档，协调跨部门资源推进落地",
-        "负责项目网络架构维护与性能调优，完成球面视景校准，保障系统稳定运行",
+        "负责球面及多通道视景校准与显示参数调优，将校准时间缩短约 20%",
+        "参与三维军事仿真系统功能开发与现场联调，覆盖视景展示、态势推演等子模块需求实现与缺陷闭环",
+        "维护项目网络与部署环境，排查链路延迟、丢包与带宽瓶颈，支撑多席位协同与演示场景稳定运行",
+        "搭建和维护脚本化巡检与日志采集流程，缩短重复性环境问题定位时间",
+        "编写现场问题复盘与解决方案文档，协调软硬件厂商、甲方与内部研发对齐优先级并按期完成里程碑",
       ],
     },
   ],
   projects: [
     {
       name: "体育赛事 AI 智能分析平台（网球）",
-      role: "技术架构负责人 · iOS + Go 全栈",
+      role: "技术负责人",
       startDate: "2024.12",
       endDate: "2026.01",
       link: "https://github.com/liogogogo/tennis-ai-showcase",
@@ -107,12 +113,12 @@ export const resume: Resume = {
         "Redis",
       ],
       description: [
-        "端侧部署 4 个自研 CoreML 模型（球检测 / 球场分割 / 姿态估计 / 动作分类），实现网球视频实时智能分析",
-        "自研 3D 轨迹重建引擎，从 2D 视频还原网球飞行轨迹与落点坐标",
-        "后端接入 LLM 生成智能分析报告，结合 Redis 缓存优化响应性能",
-        "基于 Go + Kratos 构建微服务架构，设计 74 个 API，采用 Proto-First 跨端契约管理",
-        "实现 WebSocket 实时通讯系统（好友 / 群组 / VoIP）及 UGC 内容审核模块",
-        "设计 AI 辅助开发治理体系，前后端统一接入 AI 工程化框架，提升研发效率与代码质量",
+        "基于顶会论文自研网球动作识别模型，进行模型轻量化与 CoreML / ANE 硬件加速，将单帧推理耗时从 169ms 降至 16ms，F1 达到 0.924",
+        "设计并落地 Kratos 分层微服务架构，规划 74 个 RESTful / gRPC API，采用 Proto-First 模式进行跨端契约管理，代码合规率约 99%",
+        "负责产品形态定义与技术选型，确定「端侧 AI + 云端服务」技术路线，规划 Go / Kratos 后端、Swift / SwiftUI 客户端与 CoreML 推理引擎的整体架构",
+        "搭建 CI/CD 自动化流水线，设计视频直传 COS 及临时票据方案，避免大文件经由服务端转发，同时构建内容安全审核体系",
+        "实现 JWT 双 Token 机制（Access / Refresh）、设备级 Session 隔离与服务端主动刷新策略，设计 Pro 会员权益及资源访问控制模型",
+        "基于 gRPC 双向流实现实时通讯系统，支持好友、群组等通信，并集成 UGC 内容审核能力",
       ],
     },
     {
@@ -125,53 +131,42 @@ export const resume: Resume = {
         "Python",
         "LangChain",
         "LangGraph",
+        "FastAPI",
         "Pydantic",
         "Gradio",
-        "Rich",
+        "Docker",
       ],
       description: [
-        "基于 LangChain / LangGraph 构建多阶段 AI 管线（提取 → 评分 → 润色 → 岗位对齐），支持迭代优化",
-        "设计零编造诚信审计引擎，程序化比对原文与 AI 输出，确保所有数据可追溯",
-        "实现 11 维度评分体系（含行业基准百分位）、诊断雷达图、求职信生成、面试题库等全链路功能",
-        "构建 Gradio Web 应用，支持对话式简历生成、JD 差距分析等交互功能",
+        "基于 LangChain 与 LangGraph 构建多阶段 Agent 编排管线（提取 → 评分 → 润色 → 岗位对齐），支持可配置工作流与迭代优化",
+        "设计零编造诚信审计引擎，对比原文与 AI 输出并生成完整 Audit Log，实现生成内容的可追溯与可审计",
+        "实现 11 维度简历评分体系（含行业基准百分位）、诊断雷达图、求职信生成与面试题库等全链路功能",
+        "基于 FastAPI + Gradio 构建 Web 应用，实现智能简历生成、JD 差距分析及 API 速率控制",
       ],
     },
   ],
   skills: [
     {
-      category: "编程语言",
-      items: ["Go", "Python", "Java", "Swift"],
-    },
-    {
-      category: "框架与工具",
+      category: "专业技能",
       items: [
-        "Kratos",
-        "LangChain",
-        "LangGraph",
-        "FastAPI",
-        "gRPC",
-        "Docker",
-      ],
-    },
-    {
-      category: "数据存储",
-      items: ["MySQL", "Redis", "Kafka"],
-    },
-    {
-      category: "AI / ML",
-      items: [
-        "LangChain",
-        "LangGraph",
+        "Python",
+        "LangChain / LangGraph",
         "Agent 编排",
         "RAG",
         "向量数据库",
         "大模型部署调优",
         "Token 成本优化",
+        "CoreML",
+        "Go",
+        "Java",
+        "Swift",
+        "FastAPI / Kratos",
+        "gRPC / Protobuf",
+        "MySQL / Redis / Kafka",
       ],
     },
     {
       category: "DevOps",
-      items: ["CI/CD", "Docker", "Grafana"],
+      items: ["Docker", "CI/CD", "Grafana"],
     },
   ],
   education: [
@@ -181,16 +176,14 @@ export const resume: Resume = {
       major: "计算机技术",
       startDate: "2018.09",
       endDate: "2021.06",
-      highlights: [
-        '中国（小谷围）"互联网+交通运输"创新创业比赛优胜奖',
-      ],
     },
     {
       school: "四川师范大学",
-      degree: "学士",
+      degree: "本科",
       major: "计算机科学与技术",
       startDate: "2013.09",
       endDate: "2017.06",
     },
   ],
+  honors: ['中国（小谷围）"互联网 + 交通运输"创新创业比赛 · 优胜奖'],
 };
