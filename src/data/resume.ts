@@ -58,7 +58,7 @@ export const resume: Resume = {
   title: "AI 工程师",
   contact: {
     email: "705110706@qq.com",
-    phone: "18224095395",
+    phone: "182****5395",
     github: "liogogogo",
     website: "https://liogogogo.github.io/github_cv/",
     location: "四川成都",
