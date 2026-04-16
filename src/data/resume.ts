@@ -55,7 +55,7 @@ export interface Resume {
 
 export const resume: Resume = {
   name: "廖承城",
-  title: "AI 工程师",
+  title: "系统平台研发工程师",
   contact: {
     email: "705110706@qq.com",
     phone: "182****5395",
@@ -116,9 +116,9 @@ export const resume: Resume = {
         "基于顶会论文自研网球动作识别模型，进行模型轻量化与 CoreML / ANE 硬件加速，将单帧推理耗时从 169ms 降至 16ms，F1 达到 0.924",
         "设计并落地 Kratos 分层微服务架构，规划 74 个 RESTful / gRPC API，采用 Proto-First 模式进行跨端契约管理，代码合规率约 99%",
         "负责产品形态定义与技术选型，确定「端侧 AI + 云端服务」技术路线，规划 Go / Kratos 后端、Swift / SwiftUI 客户端与 CoreML 推理引擎的整体架构",
-        "搭建 CI/CD 自动化流水线，设计视频直传 COS 及临时票据方案，避免大文件经由服务端转发，同时构建内容安全审核体系",
-        "实现 JWT 双 Token 机制（Access / Refresh）、设备级 Session 隔离与服务端主动刷新策略，设计 Pro 会员权益及资源访问控制模型",
-        "基于 gRPC 双向流实现实时通讯系统，支持好友、群组等通信，并集成 UGC 内容审核能力",
+        "搭建 CI/CD 自动化流水线，设计视频存储架构方案",
+        "架构 JWT 安全登陆鉴权系统、设备级 Session 隔离与服务端主动刷新策略",
+        "搭建 基于gRPC 双向流实现实时通讯系统框架",
       ],
     },
     {
@@ -133,14 +133,14 @@ export const resume: Resume = {
         "LangGraph",
         "FastAPI",
         "Pydantic",
-        "Gradio",
+        "React",
         "Docker",
       ],
       description: [
         "基于 LangChain 与 LangGraph 构建多阶段 Agent 编排管线（提取 → 评分 → 润色 → 岗位对齐），支持可配置工作流与迭代优化",
         "设计零编造诚信审计引擎，对比原文与 AI 输出并生成完整 Audit Log，实现生成内容的可追溯与可审计",
-        "实现 11 维度简历评分体系（含行业基准百分位）、诊断雷达图、求职信生成与面试题库等全链路功能",
-        "基于 FastAPI + Gradio 构建 Web 应用，实现智能简历生成、JD 差距分析及 API 速率控制",
+        "实现多维度简历评分体系（含行业基准百分位）、诊断雷达图、求职信生成与面试题库等全链路功能",
+        "基于 FastAPI + React 构建 Web 应用，实现智能简历生成、JD 差距分析及 API 速率控制",
       ],
     },
   ],
